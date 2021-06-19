@@ -1,0 +1,23 @@
+directive @secured(requires : String!) on FIELD_DEFINITION | OBJECT
+
+type Video{
+    uuid: UUID!
+    topic: String!
+    title: String!
+    length: Int!
+    description: String!
+    url: String!
+    playbackToken: String @secured(requires : "@authFunction.hasOffer(#userUuid,'VIDEO','play')")
+}
+
+type User{
+    id: UUID!
+    name: String!
+    email: String!
+}
+
+scalar UUID
+
+type Query{
+    getVideoForTopic(topic: String): Video
+}
