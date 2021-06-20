@@ -53,3 +53,7 @@ Application should return below error:
 
 Now add below header to request and try again
 `"X-USER-UUID":"a18c0991-eb8f-319a-84bf-57d48cbd543c"`
+
+The response should include a playback token.
+
+**Coming Soon- A blog post that explains the design and implementation**
