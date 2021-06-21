@@ -57,7 +57,7 @@ public class SecuredDirectiveWiring implements SchemaDirectiveWiring {
             DataFetcher authDataFetcher = dataFetchingEnvironment -> {
 
                 DgsRequestData requestData =  DgsContext.getRequestData(dataFetchingEnvironment);
-               String userUuid = requestData.getHeaders().getFirst("X-USER-UUID");
+               String userUuid = requestData.getHeaders().getFirst("USER-UUID");
 
                 DataFetcherResult.Builder<Object> resultBuilder = DataFetcherResult.newResult();
                 boolean result = directiveEvaluator.evaluateExpression(expressionValue,userUuid, fieldDefinition.getName());
@@ -92,7 +92,7 @@ public class SecuredDirectiveWiring implements SchemaDirectiveWiring {
 
         DataFetcher authDataFetcher = dataFetchingEnvironment -> {
             DgsRequestData requestData =  DgsContext.getRequestData(dataFetchingEnvironment);
-            String userUuid = requestData.getHeaders().getFirst("X-USER-UUID");
+            String userUuid = requestData.getHeaders().getFirst("USER-UUID");
 
             String expressionValue = (String) dataFetchingEnvironment.getFieldDefinition().getDirective(SECURED_DIRECTIVE).getArgument(REQUIRES_ATTR).getValue();
             DataFetcherResult.Builder<Object> resultBuilder = DataFetcherResult.newResult();

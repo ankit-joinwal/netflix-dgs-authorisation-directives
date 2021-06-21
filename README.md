@@ -5,7 +5,7 @@ Sample application to demonstrate using custom GraphQL Schema directive to imple
 # Running and Testing
 Start the application and navigate to http://localhost:6001/graphiql in browser.
 
-Try below request without passing the X-USER-UUID header,
+Try below request without passing the USER-UUID header,
 ```
 query{   
    getVideoForTopic(topic:"Physics"){    
@@ -52,7 +52,7 @@ Application should return below error:
 ```
 
 Now add below header to request and try again
-`"X-USER-UUID":"a18c0991-eb8f-319a-84bf-57d48cbd543c"`
+`"USER-UUID":"a18c0991-eb8f-319a-84bf-57d48cbd543c"`
 
 The response should include a playback token.
 
