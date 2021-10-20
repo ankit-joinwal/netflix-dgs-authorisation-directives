@@ -2,6 +2,8 @@
 
 Sample application to demonstrate using custom GraphQL Schema directive to implement authorisation checks in a GraphQL API built using <a href="https://netflix.github.io/dgs/">Netflix DGS Framework</a>.
 
+Blog post explaining the code : https://medium.com/chegg/enabling-graphql-authorization-with-netflix-dgs-and-custom-directives-6ea95f62e8d3
+
 # Running and Testing
 Start the application and navigate to http://localhost:6001/graphiql in browser.
 
@@ -56,4 +58,3 @@ Now add below header to request and try again
 
 The response should include a playback token.
 
-**Coming Soon- A blog post that explains the design and implementation**
